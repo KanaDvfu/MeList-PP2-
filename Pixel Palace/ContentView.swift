@@ -16,6 +16,8 @@ struct ContentView: View {
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
+	///Test
+	
 	/// Main Window View
 	var body: some View {
 		NavigationView {
