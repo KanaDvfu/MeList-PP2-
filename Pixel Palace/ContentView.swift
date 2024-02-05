@@ -22,7 +22,6 @@ struct ContentView: View {
 			List {
 				ForEach(items) { item in
 					
-					/// Menu View here
 					NavigationLink {
 						Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
 					} label: {
@@ -40,9 +39,9 @@ struct ContentView: View {
 			///Default menu view
 			Text("Select an item")
 				.navigationTitle("Pixel Palace pupu")
-		} // NavigationView
-	} // body
-} // ContentView
+		}
+	}
+}
 
 internal let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
