@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		352DECE82B70D42800C36297 /* DeleteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DECE72B70D42800C36297 /* DeleteItem.swift */; };
+		352DECED2B70DB6A00C36297 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DECEC2B70DB6A00C36297 /* ContextMenu.swift */; };
 		353BB30F2B70BA7200D833DF /* Pixel_PalaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BB30E2B70BA7200D833DF /* Pixel_PalaceApp.swift */; };
 		353BB3112B70BA7200D833DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BB3102B70BA7200D833DF /* ContentView.swift */; };
 		353BB3132B70BA7400D833DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353BB3122B70BA7400D833DF /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		352DECE72B70D42800C36297 /* DeleteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItem.swift; sourceTree = "<group>"; };
+		352DECEC2B70DB6A00C36297 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		353BB30B2B70BA7200D833DF /* Pixel Palace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel Palace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		353BB30E2B70BA7200D833DF /* Pixel_PalaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel_PalaceApp.swift; sourceTree = "<group>"; };
 		353BB3102B70BA7200D833DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		352DECE92B70DA8200C36297 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				352DECE72B70D42800C36297 /* DeleteItem.swift */,
+				352DECEC2B70DB6A00C36297 /* ContextMenu.swift */,
+			);
+			path = ContextMenu;
+			sourceTree = "<group>";
+		};
 		353BB3022B70BA7200D833DF = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 			children = (
 				353BB30E2B70BA7200D833DF /* Pixel_PalaceApp.swift */,
 				353BB3102B70BA7200D833DF /* ContentView.swift */,
+				352DECE92B70DA8200C36297 /* ContextMenu */,
 				353BB3122B70BA7400D833DF /* Assets.xcassets */,
 				353BB3172B70BA7400D833DF /* Persistence.swift */,
 				353BB31C2B70BA7400D833DF /* Pixel_Palace.entitlements */,
@@ -149,6 +163,8 @@
 				353BB3182B70BA7400D833DF /* Persistence.swift in Sources */,
 				353BB3112B70BA7200D833DF /* ContentView.swift in Sources */,
 				353BB30F2B70BA7200D833DF /* Pixel_PalaceApp.swift in Sources */,
+				352DECED2B70DB6A00C36297 /* ContextMenu.swift in Sources */,
+				352DECE82B70D42800C36297 /* DeleteItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
