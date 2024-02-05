@@ -7,24 +7,21 @@
 
 import SwiftUI
 
-struct DeleteItem: View {
+internal struct DeleteItem: View {
 	let item: Item
 	var viewContext: NSManagedObjectContext
 	
+	private func deleteItem() {
+		DeleteItemF(viewContext: viewContext, item: item)
+	}
+	
 	var body: some View {
 		Button(action: {
-			withAnimation {
-				viewContext.delete(item)
-				
-				do {
-					try viewContext.save()
-				} catch {
-					let nsError = error as NSError
-					fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-				}
-			}
+			deleteItem()
 		})
-		{ Text("Delete Item") }
-			.keyboardShortcut(.delete)
+		{
+			Text("Delete Item")
+		}
+		.keyboardShortcut(.delete)
 	}
 }

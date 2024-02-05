@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+///All elements in this view are made non accessible further.
 struct ContextMenu: View {
 	let item: Item
 	var viewContext: NSManagedObjectContext

@@ -16,70 +16,68 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item> 
 
+	/// REMOVE THIS
+	private func addItem() {
+		AddItemF(viewContext: viewContext)
+	}
+	/// AND THIS SHIT
+	private func deleteAllItemsF() {
+		for item in items {
+			DeleteItemF(viewContext: viewContext, item: item)
+		}
+	}
 	
 	/// Main Window View
     var body: some View {
         NavigationView {
             List {
                 ForEach(items) { item in
-					/// Item menu view
-                    NavigationLink {
-						Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-					}
 					
+					/// Menu view
+					NavigationLink {
+						Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
+					}
+					/// Sidebar view
+					label: {
+						Text(item.timestamp!, formatter: itemFormatter)
+					}
 					.contextMenu {
 						ContextMenu(item: item, viewContext: viewContext)
 					}
-                }
+				}
 			}
-			
-			///Toolbar view
-            .toolbar {
+			.toolbar {
 				ToolbarItem {
 					Button(action: addItem) {
 						Label("Show/Hide Toolbar", systemImage: "sidebar.left")
 					}
+					.keyboardShortcut("T")
 				}
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+				ToolbarItem {
+					Button(action: addItem) {
+						Label("Add Item", systemImage: "plus")
 					}
 					.keyboardShortcut("+")
-                }
-            }
-			
-			///Default menu view
-            Text("Select an item")
-        }
-    }
-
-	private func addItem() {
-		withAnimation {
-			let newItem = Item(context: viewContext)
-			newItem.timestamp = Date()
-			newItem.itemID = UUID()
-			
-			do {
-				try viewContext.save()
-			} catch {
-				let nsError = error as NSError
-				fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+				}
+				ToolbarItem {
+					Button(action: deleteAllItemsF) {
+						Label("Delete All Items", systemImage: "exclamationmark.arrow.circlepath")
+					}
+					.keyboardShortcut(.delete)
+				}
 			}
+			///Default menu view
+			Text("Select an item")
 		}
-	}
+		HStack {
+			Text("Hello")
+		}
+    }
 }
 
-private let itemFormatter: DateFormatter = {
+internal let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .medium
     return formatter
 }()
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
