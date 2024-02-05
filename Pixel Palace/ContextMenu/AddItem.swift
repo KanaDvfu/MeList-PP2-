@@ -10,7 +10,7 @@ import SwiftUI
 internal struct AddItem: View {
 	var viewContext: NSManagedObjectContext
 	
-	private func addItem() {
+	func addItem() {
 		AddItemF(viewContext: viewContext)
 	}
 	

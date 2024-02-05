@@ -17,6 +17,7 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
 			newItem.itemID = UUID()
+			newItem.text = ""
         }
         do {
             try viewContext.save()

@@ -11,7 +11,7 @@ internal struct DeleteItem: View {
 	let item: Item
 	var viewContext: NSManagedObjectContext
 	
-	private func deleteItem() {
+	func deleteItem() {
 		DeleteItemF(viewContext: viewContext, item: item)
 	}
 	
