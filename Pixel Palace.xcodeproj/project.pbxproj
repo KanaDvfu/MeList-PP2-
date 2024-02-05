@@ -74,9 +74,9 @@
 		352DECFD2B70E0DD00C36297 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				352DED002B70E3B700C36297 /* AddItemF.swift */,
 				352DECFE2B70E14300C36297 /* DeleteItemF.swift */,
 				352DED062B7120A000C36297 /* DeleteAllItemsF.swift */,
-				352DED002B70E3B700C36297 /* AddItemF.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
