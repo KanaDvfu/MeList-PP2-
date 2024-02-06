@@ -8,15 +8,6 @@
 import SwiftUI
 import CoreData
 
-extension Tag {
-	public var itemsArray: [Item] {
-		let set = tagToItem as? Set<Item> ?? []
-		return set.sorted {
-			$0.timestamp! < $1.timestamp!
-		}
-	}
-}
-
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	
@@ -25,21 +16,19 @@ struct ContentView: View {
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
-	@FetchRequest(
-		sortDescriptors: [NSSortDescriptor(keyPath: \Tag.tagID, ascending: true)],
-		animation: .default)
-	private var tags: FetchedResults<Tag>
-	
 	/// Main Window View
 	var body: some View {
 		NavigationView {
 			List {
-				Section("Folders") {
+				Section {
 					ForEach(items) { item in
 						
 						NavigationLink {
 							
-							Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
+							Text("ItemID: \(item.itemID!)")
+							Text("Item Text: \(item.text!)")
+								.navigationTitle("Pixel Palace testtest")
+							
 						} label: {
 							SidebarItem(item: item)
 						}
@@ -47,26 +36,8 @@ struct ContentView: View {
 							ItemContextMenu(item: item, viewContext: viewContext)
 						}
 					}
-				}
-				Divider()
-				Section("Tags") {
-					ForEach(tags) { tag in
-						
-						NavigationLink {
-							
-							Text("Tag at \(tag.color!) \(tag.tagID!)")
-							List(tag.itemsArray) { itemInTag in
-								Text(itemInTag.text ?? "empty tag text")
-							}
-						} label: {
-							SidebarTag(tag: tag)
-						}
-						.contextMenu {
-							TagContextMenu(tag: tag, viewContext: viewContext)
-						}
-					}
-				}.contextMenu {
-					!tags.isEmpty ?? 
+				} header: {
+					SidebarSectionHeader()
 				}
 			}
 			.toolbar {
@@ -77,12 +48,13 @@ struct ContentView: View {
 			Text("Select an item")
 				.navigationTitle("Pixel Palace pupu")
 		}
+		Footer(viewContext: viewContext)
 	}
 }
 
 internal let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+    formatter.dateStyle = .long
+    formatter.timeStyle = .short
     return formatter
 }()
