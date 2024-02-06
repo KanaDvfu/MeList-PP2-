@@ -12,7 +12,7 @@
 		352DECF12B70DCB900C36297 /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DECF02B70DCB900C36297 /* AddItem.swift */; };
 		352DECFF2B70E14300C36297 /* DeleteItemF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DECFE2B70E14300C36297 /* DeleteItemF.swift */; };
 		352DED012B70E3B700C36297 /* AddItemF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DED002B70E3B700C36297 /* AddItemF.swift */; };
-		352DED032B71183F00C36297 /* SidebarElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DED022B71183F00C36297 /* SidebarElement.swift */; };
+		352DED032B71183F00C36297 /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DED022B71183F00C36297 /* SidebarItem.swift */; };
 		352DED072B7120A000C36297 /* DeleteAllItemsF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DED062B7120A000C36297 /* DeleteAllItemsF.swift */; };
 		352DED0B2B712FD600C36297 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352DED0A2B712FD600C36297 /* Toolbar.swift */; };
 		353BB30F2B70BA7200D833DF /* Pixel_PalaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BB30E2B70BA7200D833DF /* Pixel_PalaceApp.swift */; };
@@ -21,6 +21,14 @@
 		353BB3162B70BA7400D833DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 353BB3152B70BA7400D833DF /* Preview Assets.xcassets */; };
 		353BB3182B70BA7400D833DF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BB3172B70BA7400D833DF /* Persistence.swift */; };
 		353BB31B2B70BA7400D833DF /* Pixel_Palace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 353BB3192B70BA7400D833DF /* Pixel_Palace.xcdatamodeld */; };
+		356D15BD2B71E2990097775D /* DeleteTagF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15BC2B71E2990097775D /* DeleteTagF.swift */; };
+		356D15C22B71ED630097775D /* AddTagF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15C12B71ED630097775D /* AddTagF.swift */; };
+		356D15C42B71EFCD0097775D /* TagColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15C32B71EFCD0097775D /* TagColor.swift */; };
+		356D15C82B71F5110097775D /* TagContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15C72B71F5110097775D /* TagContextMenu.swift */; };
+		356D15CA2B71F8990097775D /* SidebarTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15C92B71F8990097775D /* SidebarTag.swift */; };
+		356D15CC2B7202DA0097775D /* AddTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15CB2B7202DA0097775D /* AddTag.swift */; };
+		356D15CE2B7203190097775D /* DeleteTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15CD2B7203190097775D /* DeleteTag.swift */; };
+		356D15D22B7206A60097775D /* EmptySidebarTagContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D15D12B7206A60097775D /* EmptySidebarTagContextMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +37,7 @@
 		352DECF02B70DCB900C36297 /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
 		352DECFE2B70E14300C36297 /* DeleteItemF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteItemF.swift; sourceTree = "<group>"; };
 		352DED002B70E3B700C36297 /* AddItemF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemF.swift; sourceTree = "<group>"; };
-		352DED022B71183F00C36297 /* SidebarElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarElement.swift; sourceTree = "<group>"; };
+		352DED022B71183F00C36297 /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		352DED062B7120A000C36297 /* DeleteAllItemsF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllItemsF.swift; sourceTree = "<group>"; };
 		352DED0A2B712FD600C36297 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		353BB30B2B70BA7200D833DF /* Pixel Palace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pixel Palace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +48,14 @@
 		353BB3172B70BA7400D833DF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		353BB31A2B70BA7400D833DF /* Pixel_Palace.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pixel_Palace.xcdatamodel; sourceTree = "<group>"; };
 		353BB31C2B70BA7400D833DF /* Pixel_Palace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pixel_Palace.entitlements; sourceTree = "<group>"; };
+		356D15BC2B71E2990097775D /* DeleteTagF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTagF.swift; sourceTree = "<group>"; };
+		356D15C12B71ED630097775D /* AddTagF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagF.swift; sourceTree = "<group>"; };
+		356D15C32B71EFCD0097775D /* TagColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagColor.swift; sourceTree = "<group>"; };
+		356D15C72B71F5110097775D /* TagContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagContextMenu.swift; sourceTree = "<group>"; };
+		356D15C92B71F8990097775D /* SidebarTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarTag.swift; sourceTree = "<group>"; };
+		356D15CB2B7202DA0097775D /* AddTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTag.swift; sourceTree = "<group>"; };
+		356D15CD2B7203190097775D /* DeleteTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTag.swift; sourceTree = "<group>"; };
+		356D15D12B7206A60097775D /* EmptySidebarTagContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySidebarTagContextMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		352DECE92B70DA8200C36297 /* ContextMenu */ = {
+		352DECE92B70DA8200C36297 /* ItemContextMenu */ = {
 			isa = PBXGroup;
 			children = (
 				352DECEC2B70DB6A00C36297 /* ContextMenu.swift */,
 				352DECF02B70DCB900C36297 /* AddItem.swift */,
 				352DECE72B70D42800C36297 /* DeleteItem.swift */,
 			);
-			path = ContextMenu;
+			path = ItemContextMenu;
 			sourceTree = "<group>";
 		};
 		352DECF62B70E06000C36297 /* Toolbar */ = {
@@ -71,14 +87,14 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
-		352DECFD2B70E0DD00C36297 /* Functions */ = {
+		352DECFD2B70E0DD00C36297 /* ItemFunctions */ = {
 			isa = PBXGroup;
 			children = (
 				352DED002B70E3B700C36297 /* AddItemF.swift */,
 				352DECFE2B70E14300C36297 /* DeleteItemF.swift */,
 				352DED062B7120A000C36297 /* DeleteAllItemsF.swift */,
 			);
-			path = Functions;
+			path = ItemFunctions;
 			sourceTree = "<group>";
 		};
 		353BB3022B70BA7200D833DF = {
@@ -102,10 +118,8 @@
 			children = (
 				353BB30E2B70BA7200D833DF /* Pixel_PalaceApp.swift */,
 				353BB3102B70BA7200D833DF /* ContentView.swift */,
-				352DED022B71183F00C36297 /* SidebarElement.swift */,
-				352DECFD2B70E0DD00C36297 /* Functions */,
-				352DECF62B70E06000C36297 /* Toolbar */,
-				352DECE92B70DA8200C36297 /* ContextMenu */,
+				356D15BE2B71E7640097775D /* Functions */,
+				356D15BF2B71E7790097775D /* UI */,
 				353BB3122B70BA7400D833DF /* Assets.xcassets */,
 				353BB3172B70BA7400D833DF /* Persistence.swift */,
 				353BB31C2B70BA7400D833DF /* Pixel_Palace.entitlements */,
@@ -121,6 +135,64 @@
 				353BB3152B70BA7400D833DF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		356D15BB2B71E2890097775D /* TagsFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				356D15C32B71EFCD0097775D /* TagColor.swift */,
+				356D15BC2B71E2990097775D /* DeleteTagF.swift */,
+				356D15C12B71ED630097775D /* AddTagF.swift */,
+			);
+			path = TagsFunctions;
+			sourceTree = "<group>";
+		};
+		356D15BE2B71E7640097775D /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				356D15BB2B71E2890097775D /* TagsFunctions */,
+				352DECFD2B70E0DD00C36297 /* ItemFunctions */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		356D15BF2B71E7790097775D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				352DECF62B70E06000C36297 /* Toolbar */,
+				356D15C52B71F4CE0097775D /* Tag */,
+				356D15C02B71E7D50097775D /* Item */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		356D15C02B71E7D50097775D /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				352DED022B71183F00C36297 /* SidebarItem.swift */,
+				352DECE92B70DA8200C36297 /* ItemContextMenu */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		356D15C52B71F4CE0097775D /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				356D15C92B71F8990097775D /* SidebarTag.swift */,
+				356D15C62B71F4ED0097775D /* TagContextMenu */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		356D15C62B71F4ED0097775D /* TagContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				356D15C72B71F5110097775D /* TagContextMenu.swift */,
+				356D15CB2B7202DA0097775D /* AddTag.swift */,
+				356D15CD2B7203190097775D /* DeleteTag.swift */,
+				356D15D12B7206A60097775D /* EmptySidebarTagContextMenu.swift */,
+			);
+			path = TagContextMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +270,19 @@
 				353BB3182B70BA7400D833DF /* Persistence.swift in Sources */,
 				352DED0B2B712FD600C36297 /* Toolbar.swift in Sources */,
 				353BB3112B70BA7200D833DF /* ContentView.swift in Sources */,
+				356D15C82B71F5110097775D /* TagContextMenu.swift in Sources */,
+				356D15BD2B71E2990097775D /* DeleteTagF.swift in Sources */,
 				352DED012B70E3B700C36297 /* AddItemF.swift in Sources */,
+				356D15CC2B7202DA0097775D /* AddTag.swift in Sources */,
+				356D15C22B71ED630097775D /* AddTagF.swift in Sources */,
 				353BB30F2B70BA7200D833DF /* Pixel_PalaceApp.swift in Sources */,
 				352DECF12B70DCB900C36297 /* AddItem.swift in Sources */,
+				356D15CA2B71F8990097775D /* SidebarTag.swift in Sources */,
+				356D15C42B71EFCD0097775D /* TagColor.swift in Sources */,
 				352DED072B7120A000C36297 /* DeleteAllItemsF.swift in Sources */,
-				352DED032B71183F00C36297 /* SidebarElement.swift in Sources */,
+				352DED032B71183F00C36297 /* SidebarItem.swift in Sources */,
+				356D15D22B7206A60097775D /* EmptySidebarTagContextMenu.swift in Sources */,
+				356D15CE2B7203190097775D /* DeleteTag.swift in Sources */,
 				352DECED2B70DB6A00C36297 /* ContextMenu.swift in Sources */,
 				352DECE82B70D42800C36297 /* DeleteItem.swift in Sources */,
 			);

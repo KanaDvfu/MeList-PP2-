@@ -8,6 +8,15 @@
 import SwiftUI
 import CoreData
 
+extension Tag {
+	public var itemsArray: [Item] {
+		let set = tagToItem as? Set<Item> ?? []
+		return set.sorted {
+			$0.timestamp! < $1.timestamp!
+		}
+	}
+}
+
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	
@@ -16,20 +25,48 @@ struct ContentView: View {
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
+	@FetchRequest(
+		sortDescriptors: [NSSortDescriptor(keyPath: \Tag.tagID, ascending: true)],
+		animation: .default)
+	private var tags: FetchedResults<Tag>
+	
 	/// Main Window View
 	var body: some View {
 		NavigationView {
 			List {
-				ForEach(items) { item in
-					
-					NavigationLink {
-						Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
-					} label: {
-						SidebarElement(item: item)
+				Section("Folders") {
+					ForEach(items) { item in
+						
+						NavigationLink {
+							
+							Text("Item at \(item.timestamp!, formatter: itemFormatter) \(item.itemID!)")
+						} label: {
+							SidebarItem(item: item)
+						}
+						.contextMenu {
+							ItemContextMenu(item: item, viewContext: viewContext)
+						}
 					}
-					.contextMenu {
-						ContextMenu(item: item, viewContext: viewContext)
+				}
+				Divider()
+				Section("Tags") {
+					ForEach(tags) { tag in
+						
+						NavigationLink {
+							
+							Text("Tag at \(tag.color!) \(tag.tagID!)")
+							List(tag.itemsArray) { itemInTag in
+								Text(itemInTag.text ?? "empty tag text")
+							}
+						} label: {
+							SidebarTag(tag: tag)
+						}
+						.contextMenu {
+							TagContextMenu(tag: tag, viewContext: viewContext)
+						}
 					}
+				}.contextMenu {
+					!tags.isEmpty ?? 
 				}
 			}
 			.toolbar {
