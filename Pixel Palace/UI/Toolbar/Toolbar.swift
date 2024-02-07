@@ -15,17 +15,21 @@ struct Toolbar: ToolbarContent {
 		DeleteAllItemsF(viewContext: viewContext, items: items)
 	}
 	
+	private func toggleSidebar() {
+		ToggleSidebarF()
+	}
+	
     var body: some ToolbarContent {
 		ToolbarItemGroup {
-			Button(action: deleteAllItems) {
+			Button(action: toggleSidebar) {
 				Image(systemName: "sidebar.left")
 			}
-			.keyboardShortcut("T")
+			.keyboardShortcut("S", modifiers: [.control, .command])
 			
 			Button(action: deleteAllItems) {
 				Image(systemName: "exclamationmark.arrow.circlepath")
 			}
-			.keyboardShortcut(.delete)
+			.keyboardShortcut(.delete, modifiers: [.control, .command])
 		}
     }
 }

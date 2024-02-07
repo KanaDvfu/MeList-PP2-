@@ -20,26 +20,19 @@ struct ContentView: View {
 	var body: some View {
 		NavigationView {
 			List {
-				Section {
+				Section("Folders") {
 					ForEach(items) { item in
 						
 						NavigationLink {
-							
-							Text("ItemID: \(item.itemID!)")
-							Text("Item Text: \(item.text!)")
-								.navigationTitle("Pixel Palace testtest")
-							
-						} label: {
-							SidebarItem(item: item)
+							MainItem(item: item)
 						}
-						.contextMenu {
-							ItemContextMenu(item: item, viewContext: viewContext)
-						}
-					}
-				} header: {
-					SidebarSectionHeader()
+					label: {
+						SidebarItem(item: item)
+					} .contextMenu {
+						ItemContextMenu(item: item, viewContext: viewContext)
+					}}
 				}
-			}
+			}.frame(minWidth: 200)
 			.toolbar {
 				Toolbar(viewContext: viewContext, items: items)
 			}
