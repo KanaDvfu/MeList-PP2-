@@ -10,7 +10,6 @@ import SwiftUI
 func AddItemF(viewContext: NSManagedObjectContext) {
 	withAnimation {
 		let newItem = Item(context: viewContext)
-		newItem.timestamp = Date()
 		newItem.itemID = UUID()
 		newItem.text = ""
 		

@@ -16,11 +16,8 @@ internal struct DeleteItem: View {
 	}
 	
 	var body: some View {
-		Button(action: {
+		Button("Delete Item") {
 			deleteItem()
-		})
-		{
-			Text("Delete Item")
 		}
 		.keyboardShortcut(.delete)
 	}

@@ -13,8 +13,7 @@ struct MainItem: View {
     var body: some View {
 		
 		Text("ItemID: \(item.itemID!)")
-		Text("Item Text: \(item.text!)")
-			.navigationTitle("Pixel Palace testtest")
+			.navigationTitle(item.text!)
 		
     }
 }

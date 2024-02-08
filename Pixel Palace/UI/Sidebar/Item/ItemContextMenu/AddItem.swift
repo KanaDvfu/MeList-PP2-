@@ -15,10 +15,8 @@ internal struct AddItem: View {
 	}
 	
     var body: some View {
-		Button(action: {
+		Button("Add Item") {
 			addItem()
-		}) {
-			Text("Add Item")
 		}
 		.keyboardShortcut("+")
     }

@@ -16,6 +16,8 @@ struct ContentView: View {
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
+	@State private var focusedSidebarItem = ""
+	
 	/// Main Window View
 	var body: some View {
 		NavigationView {
@@ -25,22 +27,22 @@ struct ContentView: View {
 						
 						NavigationLink {
 							MainItem(item: item)
+						} label: {
+							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
+						}.contextMenu {
+							ItemContextMenu(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
 						}
-					label: {
-						SidebarItem(item: item)
-					} .contextMenu {
-						ItemContextMenu(item: item, viewContext: viewContext)
-					}}
+					}
 				}
 			}.frame(minWidth: 200)
-			.toolbar {
-				Toolbar(viewContext: viewContext, items: items)
-			}
+				.toolbar {
+					Toolbar(viewContext: viewContext, items: items)
+				}
 			
 			///Default menu view
 			Text("Select an item")
 				.navigationTitle("Pixel Palace pupu")
-		}
+		}.frame(minWidth: 400, minHeight: 400)
 		Footer(viewContext: viewContext)
 	}
 }
