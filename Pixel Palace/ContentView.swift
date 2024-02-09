@@ -12,7 +12,7 @@ struct ContentView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	
 	@FetchRequest(
-		sortDescriptors: [NSSortDescriptor(keyPath: \Item.itemID, ascending: true)],
+		sortDescriptors: [NSSortDescriptor(keyPath: \Item.text, ascending: true)],
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
@@ -25,7 +25,7 @@ struct ContentView: View {
 				Section("Folders") {
 					ForEach(items) { item in
 						NavigationLink {
-							MainItem(viewContext: viewContext, item: item, focusedSidebarItem: focusedSidebarItem)
+							MainItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
 						}.contextMenu {
@@ -39,7 +39,8 @@ struct ContentView: View {
 				}
 			DefaultMainItem()
 		}.frame(minWidth: 400, minHeight: 400)
-		Footer(viewContext: viewContext)
+		Footer(viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
+		Text(focusedSidebarItem)
 	}
 }
 

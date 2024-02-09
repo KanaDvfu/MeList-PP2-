@@ -34,6 +34,7 @@
 		35C4AE652B75DC94001FA1E2 /* ItemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4AE642B75DC94001FA1E2 /* ItemText.swift */; };
 		35E36FBB2B75F72E00BD2D8D /* DefaultMainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */; };
 		35E36FBF2B76199D00BD2D8D /* AddDataF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E36FBE2B76199D00BD2D8D /* AddDataF.swift */; };
+		35E36FC12B7625AA00BD2D8D /* ManualUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E36FC02B7625AA00BD2D8D /* ManualUpdate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		35C4AE642B75DC94001FA1E2 /* ItemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemText.swift; sourceTree = "<group>"; };
 		35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMainItem.swift; sourceTree = "<group>"; };
 		35E36FBE2B76199D00BD2D8D /* AddDataF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataF.swift; sourceTree = "<group>"; };
+		35E36FC02B7625AA00BD2D8D /* ManualUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualUpdate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				35E36FBE2B76199D00BD2D8D /* AddDataF.swift */,
+				35E36FC02B7625AA00BD2D8D /* ManualUpdate.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35E36FC12B7625AA00BD2D8D /* ManualUpdate.swift in Sources */,
 				352D1D332B75F4DE0008F42C /* Item+CoreDataProperties.swift in Sources */,
 				35E36FBB2B75F72E00BD2D8D /* DefaultMainItem.swift in Sources */,
 				353BB31B2B70BA7400D833DF /* Pixel_Palace.xcdatamodeld in Sources */,

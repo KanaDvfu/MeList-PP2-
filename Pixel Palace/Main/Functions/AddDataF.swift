@@ -21,6 +21,5 @@ func AddDataF(viewContext: NSManagedObjectContext, item: Item) {
 			let nsError = error as NSError
 			fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
 		}
-		viewContext.refreshAllObjects()
 	}
 }

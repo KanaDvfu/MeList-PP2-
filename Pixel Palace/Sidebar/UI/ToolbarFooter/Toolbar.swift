@@ -27,7 +27,7 @@ struct Toolbar: ToolbarContent {
 			.keyboardShortcut("S", modifiers: [.control, .command])
 			
 			Button(action: deleteAllItems) {
-				Image(systemName: "exclamationmark.arrow.circlepath")
+				Image(systemName: "trash.fill").foregroundColor(.red).opacity(0.69)
 			}
 			.keyboardShortcut(.delete, modifiers: [.control, .command])
 		}

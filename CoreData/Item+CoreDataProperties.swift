@@ -21,8 +21,8 @@ extension Item {
     @NSManaged public var data: Set<ItemData>?
 
 	public var itemData: [ItemData] {
-		let setOfData = data
-		return setOfData!.sorted {
+		let setOfData = data ?? []
+		return setOfData.sorted {
 			($0.dataID?.uuidString ?? UUID().uuidString) < ($1.dataID?.uuidString ?? UUID().uuidString)
 		}
 	}

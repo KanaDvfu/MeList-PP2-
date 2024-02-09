@@ -12,8 +12,11 @@ struct Footer: View {
 	
 	@State private var isHovered = false
 	
+	@Binding var focusedSidebarItem: String
+	
 	private func addItem() {
 		AddItemF(viewContext: viewContext)
+		focusedSidebarItem = ManualUpdate()
 	}
 	
 	var body: some View {

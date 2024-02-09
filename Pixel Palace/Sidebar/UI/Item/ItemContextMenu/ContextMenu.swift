@@ -15,9 +15,9 @@ struct ItemContextMenu: View {
 	@Binding var focusedSidebarItem: String
 	
     var body: some View {
-        DeleteItem(item: item, viewContext: viewContext)
+		DeleteItem(item: item, viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
 		RenameItem(item: item, viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
 		Divider()
-		AddItem(viewContext: viewContext)
+		AddItem(viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
     }
 }

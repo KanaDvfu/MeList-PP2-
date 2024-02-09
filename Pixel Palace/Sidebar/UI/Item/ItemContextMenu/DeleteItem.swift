@@ -11,8 +11,11 @@ internal struct DeleteItem: View {
 	let item: Item
 	var viewContext: NSManagedObjectContext
 	
+	@Binding var focusedSidebarItem: String
+	
 	private func deleteItem() {
 		DeleteItemF(viewContext: viewContext, item: item)
+		focusedSidebarItem = ManualUpdate()
 	}
 	
 	var body: some View {
