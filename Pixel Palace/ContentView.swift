@@ -37,10 +37,7 @@ struct ContentView: View {
 				.toolbar {
 					Toolbar(viewContext: viewContext, items: items)
 				}
-			
-			///Default menu view
-			Text("Select an item")
-				.navigationTitle("Pixel Palace")
+			DefaultMainItem()
 		}.frame(minWidth: 400, minHeight: 400)
 		Footer(viewContext: viewContext)
 	}
