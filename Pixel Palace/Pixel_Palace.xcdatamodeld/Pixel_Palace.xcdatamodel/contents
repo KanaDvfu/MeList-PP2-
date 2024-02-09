@@ -8,7 +8,6 @@
     <entity name="ItemData" representedClassName="ItemData" syncable="YES">
         <attribute name="dataID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
-        <attribute name="itemID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="data" inverseEntity="Item"/>
     </entity>

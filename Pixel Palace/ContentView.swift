@@ -25,7 +25,7 @@ struct ContentView: View {
 				Section("Folders") {
 					ForEach(items) { item in
 						NavigationLink {
-							MainItem(item: item, focusedSidebarItem: focusedSidebarItem)
+							MainItem(viewContext: viewContext, item: item, focusedSidebarItem: focusedSidebarItem)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
 						}.contextMenu {

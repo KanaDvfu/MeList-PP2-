@@ -16,7 +16,6 @@ extension ItemData {
         return NSFetchRequest<ItemData>(entityName: "ItemData")
     }
 
-    @NSManaged public var itemID: UUID?
     @NSManaged public var dataID: UUID?
     @NSManaged public var image: Data?
     @NSManaged public var text: String?

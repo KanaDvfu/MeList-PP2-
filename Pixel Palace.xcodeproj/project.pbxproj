@@ -33,6 +33,7 @@
 		35C4AE632B75DB9A001FA1E2 /* ItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4AE622B75DB9A001FA1E2 /* ItemTextField.swift */; };
 		35C4AE652B75DC94001FA1E2 /* ItemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4AE642B75DC94001FA1E2 /* ItemText.swift */; };
 		35E36FBB2B75F72E00BD2D8D /* DefaultMainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */; };
+		35E36FBF2B76199D00BD2D8D /* AddDataF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E36FBE2B76199D00BD2D8D /* AddDataF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		35C4AE622B75DB9A001FA1E2 /* ItemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTextField.swift; sourceTree = "<group>"; };
 		35C4AE642B75DC94001FA1E2 /* ItemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemText.swift; sourceTree = "<group>"; };
 		35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMainItem.swift; sourceTree = "<group>"; };
+		35E36FBE2B76199D00BD2D8D /* AddDataF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +183,8 @@
 		356D15DD2B733CEB0097775D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				356D15DE2B733D240097775D /* MainItem.swift */,
-				35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */,
+				35E36FBD2B76197500BD2D8D /* Functions */,
+				35E36FBC2B76196A00BD2D8D /* UI */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -205,6 +207,23 @@
 				352D1D312B75F4DE0008F42C /* ItemData+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		35E36FBC2B76196A00BD2D8D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				356D15DE2B733D240097775D /* MainItem.swift */,
+				35E36FBA2B75F72E00BD2D8D /* DefaultMainItem.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		35E36FBD2B76197500BD2D8D /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				35E36FBE2B76199D00BD2D8D /* AddDataF.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +319,7 @@
 				352DED032B71183F00C36297 /* SidebarItem.swift in Sources */,
 				352DECED2B70DB6A00C36297 /* ContextMenu.swift in Sources */,
 				352DECE82B70D42800C36297 /* DeleteItem.swift in Sources */,
+				35E36FBF2B76199D00BD2D8D /* AddDataF.swift in Sources */,
 				35C4AE652B75DC94001FA1E2 /* ItemText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
