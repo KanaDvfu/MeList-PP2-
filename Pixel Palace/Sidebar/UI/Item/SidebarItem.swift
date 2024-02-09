@@ -12,7 +12,6 @@ struct SidebarItem: View {
 	let item: Item
 	
 	@State private var isHovered = false
-	@State private var text = ""
 
 	@Binding var focusedSidebarItem: String
 	
@@ -24,21 +23,9 @@ struct SidebarItem: View {
 		HStack {
 			Image(systemName: "doc.fill")
 			ZStack {
-				TextField(item.text ?? "", text: $text)
-					.onSubmit {
-						RenameItemF(viewContext: viewContext, item: item, text: text)
-						focusedSidebarItem = ""
-					}
-					.disabled(!FS())
-					.opacity(FS() ? 1 : 0)
-				HStack {
-					Text(item.text ?? "")
-						.opacity(FS() ? 0 : 1)
-					Spacer()
-				}
+				ItemTextField(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, FS: FS())
+				ItemText(item: item, FS: FS())
 			}
-			Spacer()
-			Text(FS() ? "Y" : "N")
 		}
 		.opacity(isHovered ? 0.69 : 1.0)
 		.foregroundColor(isHovered ? Color("AccentColor") : Color.white)

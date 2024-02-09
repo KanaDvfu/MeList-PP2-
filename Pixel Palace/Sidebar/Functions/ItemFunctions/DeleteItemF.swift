@@ -13,6 +13,7 @@ func DeleteItemF(viewContext: NSManagedObjectContext, item: Item) {
 		
 		do {
 			try viewContext.save()
+			viewContext.refreshAllObjects()
 		} catch {
 			let nsError = error as NSError
 			fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

@@ -24,9 +24,8 @@ struct ContentView: View {
 			List {
 				Section("Folders") {
 					ForEach(items) { item in
-						
 						NavigationLink {
-							MainItem(item: item)
+							MainItem(item: item, focusedSidebarItem: focusedSidebarItem)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem)
 						}.contextMenu {
@@ -41,7 +40,7 @@ struct ContentView: View {
 			
 			///Default menu view
 			Text("Select an item")
-				.navigationTitle("Pixel Palace pupu")
+				.navigationTitle("Pixel Palace")
 		}.frame(minWidth: 400, minHeight: 400)
 		Footer(viewContext: viewContext)
 	}
