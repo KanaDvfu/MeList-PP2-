@@ -33,14 +33,13 @@ struct ContentView: View {
 						}
 					}
 				}
-			}.frame(minWidth: 200)
+			}.frame(minWidth: 200, idealWidth: 500)
 				.toolbar {
 					Toolbar(viewContext: viewContext, items: items)
 				}
 			DefaultMainItem()
 		}.frame(minWidth: 400, minHeight: 400)
 		Footer(viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
-		Text(focusedSidebarItem)
 	}
 }
 

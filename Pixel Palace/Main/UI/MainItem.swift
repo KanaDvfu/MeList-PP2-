@@ -11,7 +11,7 @@ struct MainItem: View {
 	var viewContext: NSManagedObjectContext
 	let item: Item
 	
-	///Necessary to update the view, like navigation title, when item.text is changed and when adding new Data
+	///Necessary to update the view, like navigation title, when items added, deleted and edited and when adding new Data
 	@Binding var focusedSidebarItem: String
 	
 	private func addData() {
