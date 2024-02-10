@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3509C8662B77910E0071C8E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3509C8652B77910E0071C8E2 /* README.md */; };
 		35167D772B74BF7500D32BED /* RenameItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167D762B74BF7500D32BED /* RenameItem.swift */; };
 		35167D7B2B750EEA00D32BED /* RenameItemF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35167D7A2B750EEA00D32BED /* RenameItemF.swift */; };
 		352D1D322B75F4DE0008F42C /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352D1D2E2B75F4DE0008F42C /* Item+CoreDataClass.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3509C8652B77910E0071C8E2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		35167D762B74BF7500D32BED /* RenameItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameItem.swift; sourceTree = "<group>"; };
 		35167D7A2B750EEA00D32BED /* RenameItemF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenameItemF.swift; sourceTree = "<group>"; };
 		352D1D2E2B75F4DE0008F42C /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		353BB3022B70BA7200D833DF = {
 			isa = PBXGroup;
 			children = (
+				3509C8652B77910E0071C8E2 /* README.md */,
 				35E36FB92B75F5B200BD2D8D /* CoreData */,
 				353BB30D2B70BA7200D833DF /* Pixel Palace */,
 				353BB30C2B70BA7200D833DF /* Products */,
@@ -287,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3509C8662B77910E0071C8E2 /* README.md in Resources */,
 				353BB3162B70BA7400D833DF /* Preview Assets.xcassets in Resources */,
 				353BB3132B70BA7400D833DF /* Assets.xcassets in Resources */,
 			);
