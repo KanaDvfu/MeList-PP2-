@@ -27,13 +27,16 @@ struct ContentView: View {
 	/// State of alert for deleting all items function in Toolbar.
 	@State private var isAlert = false
 	
+	///	Minimal width of MainItem.
+	private var minMainItemWidth = 300.0
+	
 	var body: some View {
 		NavigationView {
 			List {
 				Section("Notes") {
 					ForEach(items) { item in
 						NavigationLink {
-							MainItem(viewContext: viewContext, item: item, updateState: $updateState)
+							MainItem(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState )
 						}.contextMenu {
@@ -41,15 +44,21 @@ struct ContentView: View {
 						}
 					}
 				}
-			}.frame(minWidth: 200, idealWidth: 500)
+			}
+			.frame(minWidth: 200)
 				.toolbar {
 					Toolbar(viewContext: viewContext, items: items, isAlert: $isAlert, updateState: $updateState)
 				}
 			
-			//	MARK: Put the startup window here
-			Text("Update state: \(updateState)")
-				.disabled(true).opacity(0)
-		}.frame(minWidth: 400, minHeight: 400)
+			///	VStack keeps the needed updateState, but makes it not visible.
+			///	It also keeps it in ContentView so it updates always as updateState is.
+			VStack {
+				DefaultMainItem(minMainItemWidth: minMainItemWidth)
+				Text("Update state: \(updateState)")
+					.disabled(true)
+					.opacity(0)
+			}
+		}
 		Footer(viewContext: viewContext, updateState: $updateState)
 	}
 }

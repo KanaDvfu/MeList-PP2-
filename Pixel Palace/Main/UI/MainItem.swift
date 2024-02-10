@@ -10,25 +10,32 @@ import SwiftUI
 struct MainItem: View {
 	var viewContext: NSManagedObjectContext
 	let item: Item
+	let minMainItemWidth: CGFloat
 	
 	@Binding var updateState: String
-	
-	private func addData() {
-		AddDataF(viewContext: viewContext, item: item)
-		updateState = ManualUpdate()
-	}
-	
-    var body: some View {
-		if item.itemID == nil {
-			Text("Deletion is complete").font(.title)
-			Text("Hope you will not complain later ⍩")
-				.navigationTitle("Pixel Palace")
-		} else {
-			Text(item.itemID!.uuidString)
-				.navigationTitle(item.text!)
-		}
-		
 //
+//	private func addData() {
+//		AddDataF(viewContext: viewContext, item: item)
+//		updateState = ManualUpdate()
+//	}
+	
+	var body: some View {
+		
+		ZStack {
+		
+			if item.itemID != nil {
+				// MARK: put the view here!!!
+				
+				Text(item.itemID!.uuidString)
+					.navigationTitle(item.text!)
+					.opacity(item.itemID == nil ? 0 : 1)
+			}
+			
+			DefaultMainItem(minMainItemWidth: minMainItemWidth)
+				.opacity(item.itemID == nil ? 1 : 0)
+				.disabled(true)
+		}
+
 //		List {
 //
 //			ForEach(item.itemData) {data in
@@ -38,5 +45,5 @@ struct MainItem: View {
 //		Button(action: addData) {
 //			Label("Add Data", systemImage: "plus.rectangle.on.rectangle.fill")
 //		}
-    }
+	}
 }
