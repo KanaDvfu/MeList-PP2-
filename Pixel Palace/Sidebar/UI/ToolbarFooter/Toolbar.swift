@@ -15,10 +15,14 @@ struct Toolbar: ToolbarContent {
 		ToggleSidebarF()
 	}
 	
-	@State private var showingAlert = false
-
+	@Binding var alert: Bool
+	
 	private func deleteAllItems() {
 		DeleteAllItemsF(viewContext: viewContext, items: items)
+	}
+	
+	private func toggleAlert() {
+		alert.toggle()
 	}
 	
     var body: some ToolbarContent {
@@ -28,16 +32,16 @@ struct Toolbar: ToolbarContent {
 			}
 			.keyboardShortcut("S", modifiers: [.control, .command])
 			
-			Button("\(showingAlert ? "Y" : "N")") {
-				showingAlert.toggle()
-				print(showingAlert)
+			Button(action: toggleAlert) {
+				Image(systemName: "trash.fill").foregroundColor(.red).opacity(0.69)
 			}
-			.alert(isPresented: $showingAlert) {
+			.keyboardShortcut(.delete, modifiers: [.control, .command])
+			.alert(isPresented: $alert) {
 				Alert(
 					title: Text("Are you sure you want to delete this?"),
 					message: Text("There is no undo"),
 					primaryButton: .destructive(Text("Delete")) {
-						print("Deleting...")
+						deleteAllItems()
 					},
 					secondaryButton: .cancel()
 				)
@@ -45,6 +49,3 @@ struct Toolbar: ToolbarContent {
 		}
     }
 }
-
-//Image(systemName: "trash.fill").foregroundColor(.red).opacity(0.69)
-//.keyboardShortcut(.delete, modifiers: [.control, .command])

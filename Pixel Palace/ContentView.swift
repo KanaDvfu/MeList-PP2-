@@ -17,6 +17,7 @@ struct ContentView: View {
 	private var items: FetchedResults<Item>
 	
 	@State private var focusedSidebarItem = ""
+	@State private var alert = false
 	
 	/// Main Window View
 	var body: some View {
@@ -35,7 +36,7 @@ struct ContentView: View {
 				}
 			}.frame(minWidth: 200, idealWidth: 500)
 				.toolbar {
-					Toolbar(viewContext: viewContext, items: items)
+					Toolbar(viewContext: viewContext, items: items, alert: $alert)
 				}
 			DefaultMainItem()
 		}.frame(minWidth: 400, minHeight: 400)
