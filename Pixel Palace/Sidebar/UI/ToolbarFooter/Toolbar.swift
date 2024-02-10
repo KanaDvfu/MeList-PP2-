@@ -19,7 +19,10 @@ struct Toolbar: ToolbarContent {
 	
 	private func deleteAllItems() {
 		DeleteAllItemsF(viewContext: viewContext, items: items)
+		updateState = ManualUpdate()
 	}
+	
+	@Binding var updateState: String
 	
 	private func toggleAlert() {
 		isAlert.toggle()

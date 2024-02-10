@@ -21,6 +21,7 @@ struct ContentView: View {
 	
 	/// State used to update main view on changing child views.
 	///	Example: When changing itemData it updates the MainItem view, but not parent ContentView which causes visual bug in some scenarios.
+	///	To max out chanses to update it is necessary to pass the state somewhere in the ContentView to make sure the app wil alwaysl update it. It will not update the state which is not used.
 	@State private var updateState = ""
 	
 	/// State of alert for deleting all items function in Toolbar.
@@ -42,9 +43,12 @@ struct ContentView: View {
 				}
 			}.frame(minWidth: 200, idealWidth: 500)
 				.toolbar {
-					Toolbar(viewContext: viewContext, items: items, isAlert: $isAlert)
+					Toolbar(viewContext: viewContext, items: items, isAlert: $isAlert, updateState: $updateState)
 				}
-			DefaultMainItem()
+			
+			//	MARK: Put the startup window here
+			Text("Update state: \(updateState)")
+				.disabled(true).opacity(0)
 		}.frame(minWidth: 400, minHeight: 400)
 		Footer(viewContext: viewContext, updateState: $updateState)
 	}

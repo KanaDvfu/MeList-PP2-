@@ -19,16 +19,24 @@ struct MainItem: View {
 	}
 	
     var body: some View {
-		Text("ItemID: \(item.itemID == nil ? "Error with itemID" : item.itemID!.uuidString)")
-		List {
-			
-			ForEach(item.itemData) {data in
-				Label(data.text!, systemImage: "checkmark.circle.trianglebadge.exclamationmark")
-			}
+		if item.itemID == nil {
+			Text("Deletion is complete").font(.title)
+			Text("Hope you will not complain later ⍩")
+				.navigationTitle("Pixel Palace")
+		} else {
+			Text(item.itemID!.uuidString)
+				.navigationTitle(item.text!)
 		}
-		Button(action: addData) {
-			Label("Add Data", systemImage: "plus.rectangle.on.rectangle.fill")
-		}
-		.navigationTitle(item.text ?? "")
+		
+//
+//		List {
+//
+//			ForEach(item.itemData) {data in
+//				Label(data.text!, systemImage: "checkmark.circle.trianglebadge.exclamationmark")
+//			}
+//		}
+//		Button(action: addData) {
+//			Label("Add Data", systemImage: "plus.rectangle.on.rectangle.fill")
+//		}
     }
 }
