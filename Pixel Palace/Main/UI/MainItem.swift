@@ -11,12 +11,11 @@ struct MainItem: View {
 	var viewContext: NSManagedObjectContext
 	let item: Item
 	
-	///Necessary to update the view, like navigation title, when items added, deleted and edited and when adding new Data
-	@Binding var focusedSidebarItem: String
+	@Binding var updateState: String
 	
 	private func addData() {
 		AddDataF(viewContext: viewContext, item: item)
-		focusedSidebarItem = ManualUpdate()
+		updateState = ManualUpdate()
 	}
 	
     var body: some View {

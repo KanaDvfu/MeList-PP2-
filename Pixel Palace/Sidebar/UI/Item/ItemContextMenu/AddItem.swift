@@ -10,11 +10,11 @@ import SwiftUI
 internal struct AddItem: View {
 	var viewContext: NSManagedObjectContext
 	
-	@Binding var focusedSidebarItem: String
+	@Binding var updateState: String
 	
 	private func addItem() {
 		AddItemF(viewContext: viewContext)
-		focusedSidebarItem = ManualUpdate()
+		updateState = ManualUpdate()
 	}
 	
     var body: some View {

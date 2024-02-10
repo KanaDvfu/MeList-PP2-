@@ -14,6 +14,7 @@ internal struct ItemTextField: View {
 	@State private var text = ""
 	
 	@Binding var focusedSidebarItem: String
+	@Binding var updateState:String
 	
 	var FS: Bool
 	
@@ -23,6 +24,7 @@ internal struct ItemTextField: View {
 				.onSubmit {
 					RenameItemF(viewContext: viewContext, item: item, text: text)
 					focusedSidebarItem = ""
+					updateState = ManualUpdate()
 				}
 			Image(systemName: "arrow.left")
 		}

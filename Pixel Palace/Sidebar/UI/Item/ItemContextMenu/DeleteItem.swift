@@ -10,12 +10,12 @@ import SwiftUI
 internal struct DeleteItem: View {
 	let item: Item
 	var viewContext: NSManagedObjectContext
-	
-	@Binding var focusedSidebarItem: String
+
+	@Binding var updateState: String
 	
 	private func deleteItem() {
 		DeleteItemF(viewContext: viewContext, item: item)
-		focusedSidebarItem = ManualUpdate()
+		updateState = ManualUpdate()
 	}
 	
 	var body: some View {

@@ -12,17 +12,17 @@ struct Footer: View {
 	
 	@State private var isHovered = false
 	
-	@Binding var focusedSidebarItem: String
+	@Binding var updateState: String
 	
 	private func addItem() {
 		AddItemF(viewContext: viewContext)
-		focusedSidebarItem = ManualUpdate()
+		updateState = ManualUpdate()
 	}
 	
 	var body: some View {
 		HStack {
 			Button(action: addItem) {
-				Label("Add Item", systemImage: "plus.rectangle.fill.on.folder.fill")
+				Label("Add Note", systemImage: "plus.rectangle.fill.on.folder.fill")
 			}
 			.keyboardShortcut("+")
 			.buttonStyle(.borderless)

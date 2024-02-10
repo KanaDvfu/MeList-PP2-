@@ -13,11 +13,12 @@ struct ItemContextMenu: View {
 	let item: Item
 	
 	@Binding var focusedSidebarItem: String
+	@Binding var updateState: String
 	
     var body: some View {
-		DeleteItem(item: item, viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
+		DeleteItem(item: item, viewContext: viewContext, updateState: $updateState)
 		RenameItem(item: item, viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
 		Divider()
-		AddItem(viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
+		AddItem(viewContext: viewContext, updateState: $updateState)
     }
 }

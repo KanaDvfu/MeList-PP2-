@@ -13,6 +13,9 @@ internal struct RenameItem: View {
 	
 	@Binding var focusedSidebarItem: String
 	
+//	Do not needed as long as focusedSidebarItem is updated
+//	@Binding var updateState: String
+	
     var body: some View {
 		Button("Rename Item") {
 			focusedSidebarItem = item.itemID?.uuidString ?? ""

@@ -14,6 +14,7 @@ struct SidebarItem: View {
 	@State private var isHovered = false
 
 	@Binding var focusedSidebarItem: String
+	@Binding var updateState: String
 	
 	private func FS() -> Bool {
 		return item.itemID?.uuidString == focusedSidebarItem
@@ -23,7 +24,7 @@ struct SidebarItem: View {
 		HStack {
 			Image(systemName: "doc.fill")
 			ZStack {
-				ItemTextField(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, FS: FS())
+				ItemTextField(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState, FS: FS())
 				ItemText(item: item, FS: FS())
 			}
 		}

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DefaultMainItem: View {
     var body: some View {
-		Text("Select an item")
+		Text("Select a note")
 			.navigationTitle("Pixel Palace")
     }
 }
