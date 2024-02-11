@@ -11,10 +11,11 @@ import CoreData
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	
-	// MARK: Swift sorts bools not in the way C/C++ do: false > true. That is why there it is not ascending
+	// MARK: Swift sorts bools not in the way C/C++ do: false > true. That is why sortDescriptor is descending.
 	
 	@FetchRequest(
-		sortDescriptors: [NSSortDescriptor(keyPath: \Item.isFavorite, ascending: false)],
+		sortDescriptors: [NSSortDescriptor(keyPath: \Item.isFavorite, ascending: false),
+						  NSSortDescriptor(keyPath: \Item.text, ascending: true)],
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
@@ -38,7 +39,7 @@ struct ContentView: View {
 				Section("Notes") {
 					ForEach(items) { item in
 						NavigationLink {
-							MainItem(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
+							MainItemView(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState)
 						}.contextMenu {
