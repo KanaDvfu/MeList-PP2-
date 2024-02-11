@@ -39,7 +39,7 @@ struct ContentView: View {
 				Section("Notes") {
 					ForEach(items) { item in
 						NavigationLink {
-							MainItemView(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
+							MainItem(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
 						} label: {
 							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState)
 						}.contextMenu {
