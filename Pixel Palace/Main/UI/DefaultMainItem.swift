@@ -8,7 +8,7 @@
 import SwiftUI
 
 // MARK: Welcome to the horrible place. If you don't like torture and gore, please leave this file...
-// MARK: Even though I can make it clean but why? Why should I make clean constant file when this is my file which should access only me? 
+// MARK: Even though I can make it clean but why? Why should I make clean constant file when this is my file which should access only me?
 
 struct DefaultMainItem: View {
 	let minMainItemWidth: CGFloat
@@ -68,7 +68,7 @@ struct DefaultMainItem: View {
 					Label {
 						Text(": click on it to mark note as favorite. Cau can undo this the same way.")
 					} icon: {
-						Image(systemName: "star.square")
+						Image(systemName: "star")
 							.foregroundColor(Color.gray)
 					}
 					

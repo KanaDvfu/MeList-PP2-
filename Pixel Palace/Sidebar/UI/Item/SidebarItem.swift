@@ -27,7 +27,7 @@ struct SidebarItem: View {
     var body: some View {
 		HStack {
 			Button (action: toggleFavorite) {
-				item.isFavorite ? Image(systemName: "star.square.fill") : Image(systemName: "star.square")
+				item.isFavorite ? Image(systemName: "star.fill") : Image(systemName: "star")
 			}.buttonStyle(.borderless)
 			ZStack {
 				ItemTextField(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState, FS: FS())
