@@ -11,8 +11,10 @@ import CoreData
 struct ContentView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	
+	// MARK: Swift sorts bools not in the way C/C++ do: false > true. That is why there it is not ascending
+	
 	@FetchRequest(
-		sortDescriptors: [NSSortDescriptor(keyPath: \Item.text, ascending: true)],
+		sortDescriptors: [NSSortDescriptor(keyPath: \Item.isFavorite, ascending: false)],
 		animation: .default)
 	private var items: FetchedResults<Item>
 	
@@ -38,7 +40,7 @@ struct ContentView: View {
 						NavigationLink {
 							MainItem(viewContext: viewContext, item: item, minMainItemWidth: minMainItemWidth, updateState: $updateState)
 						} label: {
-							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState )
+							SidebarItem(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState)
 						}.contextMenu {
 							ItemContextMenu(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState)
 						}
@@ -46,9 +48,9 @@ struct ContentView: View {
 				}
 			}
 			.frame(minWidth: 200)
-				.toolbar {
-					Toolbar(viewContext: viewContext, items: items, isAlert: $isAlert, updateState: $updateState)
-				}
+			.toolbar {
+				Toolbar(viewContext: viewContext, items: items, isAlert: $isAlert, updateState: $updateState)
+			}
 			
 			///	VStack keeps the needed updateState, but makes it not visible.
 			///	It also keeps it in ContentView so it updates always as updateState is.

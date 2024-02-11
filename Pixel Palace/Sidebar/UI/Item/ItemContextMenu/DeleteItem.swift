@@ -19,7 +19,7 @@ internal struct DeleteItem: View {
 	}
 	
 	var body: some View {
-		Button("Delete Item") {
+		Button("Delete Note") {
 			deleteItem()
 		}
 		.keyboardShortcut(.delete)

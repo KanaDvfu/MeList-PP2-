@@ -11,6 +11,7 @@ func AddItemF(viewContext: NSManagedObjectContext) {
 	withAnimation {
 		let newItem = Item(context: viewContext)
 		newItem.itemID = UUID()
+		newItem.isFavorite = false
 		newItem.text = ""
 		
 		do {

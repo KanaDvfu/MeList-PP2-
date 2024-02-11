@@ -20,9 +20,15 @@ struct SidebarItem: View {
 		return item.itemID?.uuidString == focusedSidebarItem
 	}
 	
+	private func toggleFavorite() {
+		item.isFavorite.toggle()
+	}
+	
     var body: some View {
 		HStack {
-			Image(systemName: "doc.fill")
+			Button (action: toggleFavorite) {
+				item.isFavorite ? Image(systemName: "star.square.fill") : Image(systemName: "star.square")
+			}.buttonStyle(.borderless)
 			ZStack {
 				ItemTextField(viewContext: viewContext, item: item, focusedSidebarItem: $focusedSidebarItem, updateState: $updateState, FS: FS())
 				ItemText(item: item, FS: FS())

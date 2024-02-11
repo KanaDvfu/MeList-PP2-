@@ -16,8 +16,10 @@ struct ItemContextMenu: View {
 	@Binding var updateState: String
 	
     var body: some View {
-		DeleteItem(item: item, viewContext: viewContext, updateState: $updateState)
+		FavoriteItem(item: item, viewContext: viewContext)
+		Divider()
 		RenameItem(item: item, viewContext: viewContext, focusedSidebarItem: $focusedSidebarItem)
+		DeleteItem(item: item, viewContext: viewContext, updateState: $updateState)
 		Divider()
 		AddItem(viewContext: viewContext, updateState: $updateState)
     }

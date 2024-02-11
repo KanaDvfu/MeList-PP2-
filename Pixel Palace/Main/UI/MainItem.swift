@@ -13,7 +13,7 @@ struct MainItem: View {
 	let minMainItemWidth: CGFloat
 	
 	@Binding var updateState: String
-//
+
 //	private func addData() {
 //		AddDataF(viewContext: viewContext, item: item)
 //		updateState = ManualUpdate()
@@ -25,10 +25,12 @@ struct MainItem: View {
 		
 			if item.itemID != nil {
 				// MARK: put the view here!!!
-				
-				Text(item.itemID!.uuidString)
-					.navigationTitle(item.text!)
-					.opacity(item.itemID == nil ? 0 : 1)
+				VStack {
+					Text(item.itemID!.uuidString)
+						.navigationTitle(item.text!)
+						.opacity(item.itemID == nil ? 0 : 1)
+					Text(item.isFavorite ? "Y" : "N")
+				}
 			}
 			
 			DefaultMainItem(minMainItemWidth: minMainItemWidth)
@@ -37,7 +39,6 @@ struct MainItem: View {
 		}
 
 //		List {
-//
 //			ForEach(item.itemData) {data in
 //				Label(data.text!, systemImage: "checkmark.circle.trianglebadge.exclamationmark")
 //			}
@@ -45,5 +46,6 @@ struct MainItem: View {
 //		Button(action: addData) {
 //			Label("Add Data", systemImage: "plus.rectangle.on.rectangle.fill")
 //		}
+		
 	}
 }

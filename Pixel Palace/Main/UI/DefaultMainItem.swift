@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// MARK: Welcome to the horrible place. If you don't like torture and gore, please leave this file...
+// MARK: Even though I can make it clean but why? Why should I make clean constant file when this is my file which should access only me? 
+
 struct DefaultMainItem: View {
 	let minMainItemWidth: CGFloat
 	
@@ -63,16 +66,27 @@ struct DefaultMainItem: View {
 					Divider()
 					
 					Label {
-						Text(": also you can right-click the existing notes in the sidebar to see things you can do.")
+						Text(": click on it to mark note as favorite. Cau can undo this the same way.")
 					} icon: {
-						Image(systemName: "asterisk")
+						Image(systemName: "star.square")
 							.foregroundColor(Color.gray)
 					}
 					
 					Divider()
 					
-					Text("Notes functionality is under development. But the text editor is available.")
-						.font(.caption)
+					VStack {
+						Label {
+							Text(": also you can right-click the existing notes in the sidebar to see things you can do.")
+						} icon: {
+							Image(systemName: "asterisk")
+								.foregroundColor(Color.gray)
+						}
+						
+						Divider()
+						
+						Text("Notes functionality is under development. But the text editor is available.")
+							.font(.caption)
+					}
 					
 					Spacer()
 				}

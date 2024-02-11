@@ -2,7 +2,7 @@
 //  Item+CoreDataProperties.swift
 //  Pixel Palace
 //
-//  Created by Евгений Канашкин on 09.02.2024.
+//  Created by Евгений Канашкин on 11.02.2024.
 //
 //
 
@@ -18,6 +18,7 @@ extension Item {
 
     @NSManaged public var itemID: UUID?
     @NSManaged public var text: String?
+    @NSManaged public var isFavorite: Bool
     @NSManaged public var data: Set<ItemData>?
 
 	public var itemData: [ItemData] {
@@ -26,7 +27,6 @@ extension Item {
 			($0.dataID?.uuidString ?? UUID().uuidString) < ($1.dataID?.uuidString ?? UUID().uuidString)
 		}
 	}
-	
 }
 
 // MARK: Generated accessors for data
