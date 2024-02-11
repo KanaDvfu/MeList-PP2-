@@ -16,7 +16,7 @@ struct ItemV: View {
 	private let columns = [
 		GridItem(.flexible()),
 		GridItem(.flexible()),
-		GridItem(.flexible()),
+		GridItem(.flexible())
 	]
 	
 	private func addData() {
@@ -33,9 +33,10 @@ struct ItemV: View {
 					spacing: 16
 				) {
 					ForEach(item.itemData) {data in
-						Label(data.text!, systemImage: "checkmark.circle.trianglebadge.exclamationmark")
+						ItemDataV(data: data)
 					}
 				}
+				.padding(10)
 			}
 			Button(action: addData) {
 				Label("Add Data", systemImage: "plus.rectangle.on.rectangle.fill")
@@ -44,9 +45,3 @@ struct ItemV: View {
 		.navigationTitle(item.text == nil ? "" : item.text!)
 	}
 }
-
-//VStack {
-//	Text(item.itemID!.uuidString)
-//		.opacity(item.itemID == nil ? 0 : 1)
-//	Text(item.isFavorite ? "Y" : "N")
-//}
