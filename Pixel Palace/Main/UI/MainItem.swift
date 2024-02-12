@@ -9,7 +9,9 @@ import SwiftUI
 
 struct MainItem: View {
 	var viewContext: NSManagedObjectContext
-	let item: Item
+	
+	@State var item: Item
+	
 	let minMainItemWidth: CGFloat
 	
 	@Binding var updateState: String
@@ -19,7 +21,9 @@ struct MainItem: View {
 		ZStack {
 		
 			if item.itemID != nil {
-				ItemV(viewContext: viewContext, item: item, updateState: $updateState)
+				TextEditor(text: $item.longtext)
+					.font(.title3)
+					.navigationTitle(item.text == "" ? "MyList" : item.text!)
 			}
 			
 			DefaultMainItem(minMainItemWidth: minMainItemWidth)

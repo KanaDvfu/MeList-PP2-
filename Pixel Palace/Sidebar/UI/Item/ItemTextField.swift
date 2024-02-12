@@ -20,12 +20,15 @@ internal struct ItemTextField: View {
 	
     var body: some View {
 		HStack {
-			TextField(item.text ?? "", text: $text)
-				.onSubmit {
-					RenameItemF(viewContext: viewContext, item: item, text: text)
-					focusedSidebarItem = ""
-					updateState = ManualUpdate()
-				}
+			TextField(
+				item.text ?? "",
+				text: $text
+			)
+			.onSubmit {
+				RenameItemF(viewContext: viewContext, item: item, text: text)
+				focusedSidebarItem = ""
+				updateState = ManualUpdate()
+			}
 			Image(systemName: "arrow.left")
 		}
 		.disabled(!FS)

@@ -18,33 +18,36 @@ extension Item {
 
     @NSManaged public var itemID: UUID?
     @NSManaged public var text: String?
+	@NSManaged public var longtext: String
     @NSManaged public var isFavorite: Bool
-    @NSManaged public var data: Set<ItemData>?
-
-	public var itemData: [ItemData] {
-		let setOfData = data ?? []
-		return setOfData.sorted {
-			($0.dataID?.uuidString ?? UUID().uuidString) < ($1.dataID?.uuidString ?? UUID().uuidString)
-		}
-	}
+	
+	//	MARK: DEPRECATED as long as macos version is less than 13. I suffered a lot trying to use this.
+//    @NSManaged public var data: Set<ItemData>?
+//
+//	public var itemData: [ItemData] {
+//		let setOfData = data ?? []
+//		return setOfData.sorted {
+//			($0.dataID?.uuidString ?? UUID().uuidString) < ($1.dataID?.uuidString ?? UUID().uuidString)
+//		}
+//	}
 }
 
-// MARK: Generated accessors for data
-extension Item {
-
-    @objc(addDataObject:)
-    @NSManaged public func addToData(_ value: ItemData)
-
-    @objc(removeDataObject:)
-    @NSManaged public func removeFromData(_ value: ItemData)
-
-    @objc(addData:)
-    @NSManaged public func addToData(_ values: NSSet)
-
-    @objc(removeData:)
-    @NSManaged public func removeFromData(_ values: NSSet)
-
-}
+//// MARK: Generated accessors for data
+//extension Item {
+//
+//    @objc(addDataObject:)
+//    @NSManaged public func addToData(_ value: ItemData)
+//
+//    @objc(removeDataObject:)
+//    @NSManaged public func removeFromData(_ value: ItemData)
+//
+//    @objc(addData:)
+//    @NSManaged public func addToData(_ values: NSSet)
+//
+//    @objc(removeData:)
+//    @NSManaged public func removeFromData(_ values: NSSet)
+//
+//}
 
 extension Item : Identifiable {
 

@@ -13,6 +13,7 @@ func AddItemF(viewContext: NSManagedObjectContext) {
 		newItem.itemID = UUID()
 		newItem.isFavorite = false
 		newItem.text = ""
+		newItem.longtext = ""
 		
 		do {
 			try viewContext.save()
